@@ -74,40 +74,34 @@
 
     <!-- Inline JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("login-form");
+      
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("login-form");
 
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-          const email = form.querySelector('input[type="email"]').value.trim();
-          const password = form
-            .querySelector('input[type="password"]')
-            .value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const password = form.querySelector('input[type="password"]').value.trim();
 
-          if (email && password) {
-            // ✅ Save login info
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("userEmail", email);
+      const users = JSON.parse(localStorage.getItem("users")) || [];
 
-            // ✅ Redirect
-            window.location.href = "dashboard.html";
-          } else {
-            alert("Please fill in both email and password.");
-          }
-        });
-      });
-      function checkLogin() {
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        console.log("Login status:", isLoggedIn); // for debugging
+      const matchedUser = users.find(
+        (user) => user.email === email && user.password === password
+      );
 
-        if (isLoggedIn === "true") {
-          // Redirect to dashboard
-          window.location.href = "dashboard.html";
-        } else {
-          alert("⚠️ Please login first to access the dashboard.");
-        }
+      if (matchedUser) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("currentUser", matchedUser.username); // ✅ Save the username
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid email or password. Please try again.");
       }
+    });
+  });
+</script>
+
 
       
     </script>

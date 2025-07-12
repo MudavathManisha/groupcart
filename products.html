@@ -1,299 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products | GroupCart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-50 text-gray-700 font-sans">
-    <!-- Navbar -->
-    <nav class="bg-indigo-300 text-white shadow-md">
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <h1 class="text-2xl font-bold tracking-wide">GroupCart</h1>
-        <div class="space-x-6">
-          <a href="index.html" class="hover:text-gray-100">Home</a>
-          <a href="dashboard.html" class="hover:text-gray-100">Dashboard</a>
-          <a href="products.html" class="hover:text-gray-100">Shop</a>
-          <a href="groupcart.html" class="hover:text-gray-100">Group Cart</a>
-          <a href="checkout.html" class="hover:text-gray-100">My Summary</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | GroupCart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #no-results {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-700 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-indigo-300 text-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">GroupCart</h1>
+      <div class="space-x-6">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="products.html">Shop</a>
+        <a href="groupcart.html">Group Cart</a>
+        <a href="checkout.html">My Summary</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Header -->
-    <section class="px-6 md:px-16 py-10">
-      <h2 class="text-3xl font-bold text-indigo-600 mb-4">
-        Explore Products 🛍️
-      </h2>
-      <p class="text-gray-600 mb-8">Browse items to add to your group cart.</p>
+  <!-- Header + Search -->
+  <section class="px-6 py-10">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-2">Explore Products 🛍️</h2>
+    <p class="text-gray-600 mb-4">Search and add items to your group cart in real-time.</p>
+    <div class="mb-6 flex gap-2">
+      <input id="search-input" type="text" placeholder="Search groceries..." class="px-4 py-2 border rounded w-full max-w-md" />
+      <button onclick="filterProducts()" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600">Search</button>
+    </div>
 
-      <!-- Products Grid -->
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Product Card -->
-        <!-- 🧺 Daily Essentials -->
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
-            alt="Rice"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Basmati Rice 5kg
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹420</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    <p id="no-results" class="text-red-500 mt-4">No items found. Try something else!</p>
+  </section>
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3081/3081480.png"
-            alt="Atta"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Wheat Flour 5kg
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹310</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+  <footer class="bg-indigo-300 text-white py-6 text-center mt-16">
+    <p>© 2025 GroupCart. Your smart group shopping partner 🛒</p>
+  </footer>
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
-            alt="Milk"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Milk Packet
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹55</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+  <!-- Script -->
+  <script>
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+      alert("You're not logged in! Redirecting to login...");
+      window.location.href = "login.html";
+    }
 
-        <!-- 🍫 Snacks -->
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
-            alt="Oreo"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Oreo Biscuits
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹30</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    const products = [
+        { name: "Basmati Rice 5kg", price: 420, icon: "🛍️" },
+        { name: "Wheat Flour 5kg", price: 310, icon: "🧺" },
+        { name: "Milk Packet", price: 55, icon: "🥛" },
+        { name: "Oreo Biscuits", price: 30, icon: "🍪" },
+        { name: "Lays Chips", price: 20, icon: "🥔" },
+        { name: "Coca Cola Can", price: 45, icon: "🥤" },
+        { name: "Dish Wash Gel", price: 60, icon: "🧼" },
+        { name: "Floor Mop", price: 210, icon: "🧹" },
+        { name: "Non-Stick Pan", price: 580, icon: "🍳" },
+        { name: "Steel Spoon Set", price: 180, icon: "🥄" },
+        { name: "Toor Dal 1kg", price: 145, icon: "🫘" },
+        { name: "Tomato Ketchup", price: 75, icon: "🍅" },
+        { name: "Hand Wash", price: 95, icon: "🖐️" },
+        { name: "Toilet Cleaner", price: 110, icon: "🚽" },
+        { name: "Bread Loaf", price: 40, icon: "🍞" },
+        { name: "Bananas", price: 60, icon: "🍌" },
+        { name: "Tomatoes 1kg", price: 35, icon: "🍅" },
+        { name: "Onions 1kg", price: 25, icon: "🧅" },
+        { name: "Potatoes 1kg", price: 22, icon: "🥔" },
+        { name: "Apples 1kg", price: 120, icon: "🍎" },
+        { name: "Orange Juice 1L", price: 95, icon: "🧃" },
+        { name: "Green Tea Pack", price: 130, icon: "🍵" },
+        { name: "Sugar 1kg", price: 50, icon: "🍬" },
+        { name: "Salt 1kg", price: 20, icon: "🧂" },
+        { name: "Cooking Oil 1L", price: 155, icon: "🫒" },
+        { name: "Garam Masala", price: 70, icon: "🌶️" },
+        { name: "Detergent Powder", price: 140, icon: "🧴" },
+        { name: "Shampoo Bottle", price: 160, icon: "🧴" },
+        { name: "Toothpaste", price: 45, icon: "🪥" },
+        { name: "Toothbrush Pack", price: 60, icon: "🪥" },
+        { name: "Face Cream", price: 110, icon: "🧴" },
+        { name: "Hair Oil", price: 85, icon: "🧴" },
+        { name: "Eggs (12 pack)", price: 90, icon: "🥚" },
+        { name: "Paneer 200g", price: 75, icon: "🧀" },
+        { name: "Cheese Slices", price: 120, icon: "🧀" },
+        { name: "Ice Cream Tub", price: 180, icon: "🍨" },
+        { name: "Mangoes 1kg", price: 100, icon: "🥭" },
+        { name: "Chocolates Pack", price: 150, icon: "🍫" },
+        { name: "Corn Flakes", price: 110, icon: "🥣" },
+        { name: "Instant Noodles", price: 40, icon: "🍜" },
+        { name: "Biscuits Pack", price: 25, icon: "🍪" },
+        { name: "Coffee Jar", price: 180, icon: "☕" },
+        { name: "Curd 500ml", price: 40, icon: "🥣" },
+        { name: "Butter 100g", price: 55, icon: "🧈" },
+        { name: "Green Chilli 100g", price: 15, icon: "🌶️" },
+        { name: "Coriander Bunch", price: 10, icon: "🌿" },
+        { name: "Ginger 100g", price: 18, icon: "🫚" },
+        { name: "Garlic 100g", price: 25, icon: "🧄" },
+        { name: "Tamarind 200g", price: 30, icon: "🟤" },
+        { name: "Moong Dal 1kg", price: 130, icon: "🫘" },
+        { name: "Masoor Dal 1kg", price: 110, icon: "🫘" },
+        { name: "Chana Dal 1kg", price: 120, icon: "🫘" },
+        { name: "Dry Red Chillies", price: 70, icon: "🌶️" },
+        { name: "Black Pepper 100g", price: 80, icon: "⚫" },
+        { name: "Cumin Seeds 100g", price: 60, icon: "🌾" },
+        { name: "Turmeric Powder", price: 50, icon: "💛" },
+        { name: "Mustard Seeds 100g", price: 45, icon: "🟡" },
+        { name: "Fenugreek Seeds", price: 35, icon: "🟤" },
+        { name: "Rava/Sooji 1kg", price: 38, icon: "🌾" },
+        { name: "Poha (Flattened Rice)", price: 35, icon: "🍚" },
+        { name: "Papad Pack", price: 40, icon: "🫓" },
+        { name: "Pickle Bottle", price: 65, icon: "🥫" },
+        { name: "Jam Jar", price: 85, icon: "🍓" },
+        { name: "Honey Bottle", price: 120, icon: "🍯" },
+        { name: "Broomstick", price: 90, icon: "🧹" },
+        { name: "Garbage Bags", price: 45, icon: "🗑️" },
+        { name: "Sanitary Napkins", price: 85, icon: "🩸" },
+        { name: "Face Mask Pack", price: 60, icon: "😷" },
+      ];
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3075/3075975.png"
-            alt="Lays"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Lays Chips
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹20</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png"
-            alt="Coke"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Coca Cola Can
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹45</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    const grid = document.getElementById("product-grid");
+    const noResults = document.getElementById("no-results");
 
-        <!-- 🧹 Cleaning -->
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3075/3075973.png"
-            alt="Dish Wash"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Dish Wash Gel
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹60</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    function displayProducts(items) {
+      grid.innerHTML = "";
+      if (items.length === 0) {
+        noResults.style.display = "block";
+        return;
+      }
+      noResults.style.display = "none";
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2516/2516773.png"
-            alt="Mop"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Floor Mop
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹210</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+      items.forEach((p) => {
+        const card = `
+          <div class="bg-white border rounded-lg shadow p-4 flex flex-col">
+            <div class="text-5xl text-center mb-2">${p.icon}</div>
+            <h3 class="text-lg font-semibold text-center">${p.name}</h3>
+            <p class="text-center text-sm text-gray-500 mb-2">₹${p.price}</p>
+            <input type="number" min="1" value="1" class="quantity-input border rounded px-2 py-1 mb-2" />
+            <button class="add-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600">Add to GroupCart</button>
+          </div>
+        `;
+        grid.innerHTML += card;
+      });
+    }
 
-        <!-- 🍽️ Kitchen -->
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3081/3081601.png"
-            alt="Pan"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Non-Stick Pan
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹580</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    function filterProducts() {
+      const keyword = document.getElementById("search-input").value.toLowerCase();
+      const filtered = products.filter((p) => p.name.toLowerCase().includes(keyword));
+      displayProducts(filtered);
+    }
 
-        <div
-          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/685/685352.png"
-            alt="Spoons"
-            class="w-20 h-20 mx-auto mb-3"
-          />
-          <h3 class="text-lg font-semibold text-center text-gray-800">
-            Steel Spoon Set
-          </h3>
-          <p class="text-center text-sm text-gray-500 mb-3">₹180</p>
-          <input
-            type="number"
-            min="1"
-            value="1"
-            class="border rounded-md px-2 py-1 mb-2"
-          />
-          <button
-            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
-          >
-            Add to GroupCart
-          </button>
-        </div>
+    // Add item to cart with username
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("add-btn")) {
+        const card = e.target.closest("div");
+        const quantity = parseInt(card.querySelector(".quantity-input").value) || 1;
+        const name = card.querySelector("h3").textContent;
+        const price = parseInt(card.querySelector("p").textContent.replace("₹", ""));
 
-        <!-- Add more product cards as needed -->
-      </div>
-    </section>
+        const cartItem = { username: currentUser, name, quantity, price };
+        let cart = JSON.parse(localStorage.getItem("groupCart")) || [];
+        cart.push(cartItem);
+        localStorage.setItem("groupCart", JSON.stringify(cart));
+        alert("✅ Added to GroupCart!");
+      }
+    });
 
-    <!-- Footer -->
-    <footer class="bg-indigo-300 text-white py-6 text-center mt-16">
-      <p>© 2025 GroupCart. Your smart group shopping partner 🛒</p>
-    </footer>
-  </body>
+    // Initial render
+    displayProducts(products);
+  </script>
+</body>
 </html>
