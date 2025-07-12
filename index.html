@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GroupCart | Shop Together, Save Smarter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-700 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-indigo-300 text-white shadow-md">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold tracking-wide">GroupCart</h1>
+        <div class="space-x-6">
+          <a href="#about" class="hover:text-gray-100">About</a>
+          <a href="login.html" class="hover:text-gray-100">Login</a>
+          <a href="register.html" class="hover:text-gray-100">Register</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section
+      class="text-center py-24 bg-gradient-to-r from-indigo-200 to-purple-200 text-gray-800"
+    >
+      <h2 class="text-5xl font-extrabold mb-4">Shop Together. Save Smarter.</h2>
+      <p class="text-xl mb-8">
+        The smartest way to build and checkout your group’s shopping list — all
+        in one place.
+      </p>
+      <button
+        onclick="checkLogin()"
+        class="bg-indigo-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-indigo-600 transition"
+      >
+        Get Started
+      </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 md:px-24 bg-white">
+      <h3 class="text-3xl font-bold mb-10 text-center text-indigo-600">
+        Why Choose GroupCart?
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-gray-100 p-6 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+            Real-Time Cart Sharing
+          </h4>
+          <p>Work with your team to build a perfect shopping list together.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+            Smart Split Checkout
+          </h4>
+          <p>Split costs fairly and keep track of who pays for what.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+            Ideal for Groups
+          </h4>
+          <p>
+            From roommates to event planners, GroupCart is built for
+            collaboration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-300 text-white py-6 text-center">
+      <p>© 2025 GroupCart. Designed for Sparkathon 💡</p>
+    </footer>
+    <script>
+      function checkLogin() {
+        // Placeholder for login check logic
+        // In a real app, you’d check cookies, sessionStorage, or Firebase auth
+        const isLoggedIn = false; // set this to true when user is logged in
+
+        if (isLoggedIn) {
+          window.location.href = "index.html";
+        } else {
+          alert("⚠️ Please login first to access the dashboard.");
+        }
+      }
+    </script>
+  </body>
+</html>

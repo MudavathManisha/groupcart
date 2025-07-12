@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | GroupCart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-700 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-indigo-300 text-white shadow-md">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold tracking-wide">GroupCart</h1>
+        <div class="space-x-6">
+          <a href="index.html" class="hover:text-gray-100">Home</a>
+          <a href="dashboard.html" class="hover:text-gray-100">Dashboard</a>
+          <a href="products.html" class="hover:text-gray-100">Shop</a>
+          <a href="groupcart.html" class="hover:text-gray-100">Group Cart</a>
+          <a href="checkout.html" class="hover:text-gray-100">My Summary</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="px-6 md:px-16 py-10">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-4">
+        Explore Products 🛍️
+      </h2>
+      <p class="text-gray-600 mb-8">Browse items to add to your group cart.</p>
+
+      <!-- Products Grid -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Product Card -->
+        <!-- 🧺 Daily Essentials -->
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
+            alt="Rice"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Basmati Rice 5kg
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹420</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3081/3081480.png"
+            alt="Atta"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Wheat Flour 5kg
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹310</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
+            alt="Milk"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Milk Packet
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹55</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <!-- 🍫 Snacks -->
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+            alt="Oreo"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Oreo Biscuits
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹30</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3075/3075975.png"
+            alt="Lays"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Lays Chips
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹20</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png"
+            alt="Coke"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Coca Cola Can
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹45</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <!-- 🧹 Cleaning -->
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3075/3075973.png"
+            alt="Dish Wash"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Dish Wash Gel
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹60</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2516/2516773.png"
+            alt="Mop"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Floor Mop
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹210</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <!-- 🍽️ Kitchen -->
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3081/3081601.png"
+            alt="Pan"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Non-Stick Pan
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹580</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg p-4 flex flex-col"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/685/685352.png"
+            alt="Spoons"
+            class="w-20 h-20 mx-auto mb-3"
+          />
+          <h3 class="text-lg font-semibold text-center text-gray-800">
+            Steel Spoon Set
+          </h3>
+          <p class="text-center text-sm text-gray-500 mb-3">₹180</p>
+          <input
+            type="number"
+            min="1"
+            value="1"
+            class="border rounded-md px-2 py-1 mb-2"
+          />
+          <button
+            class="bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600"
+          >
+            Add to GroupCart
+          </button>
+        </div>
+
+        <!-- Add more product cards as needed -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-300 text-white py-6 text-center mt-16">
+      <p>© 2025 GroupCart. Your smart group shopping partner 🛒</p>
+    </footer>
+  </body>
+</html>

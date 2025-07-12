@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Cart | Roommate Essentials</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-700 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-indigo-300 text-white shadow-md">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wide">GroupCart</h1>
+    <div class="space-x-6">
+      <a href="index.html" class="hover:text-gray-100">Home</a>
+      <a href="dashboard.html" class="hover:text-gray-100">Dashboard</a>
+      <a href="products.html" class="hover:text-gray-100">Shop</a>
+      <a href="groupcart.html" class="hover:text-gray-100">Group Cart</a>
+      <a href="checkout.html" class="hover:text-gray-100">My Summary</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Header -->
+  <section class="px-6 md:px-16 py-10">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-2">Roommate Essentials 🏠</h2>
+    <p class="text-gray-600 mb-6">Cart Members: <span class="text-gray-800 font-medium">You, Sravya</span></p>
+
+    <!-- Cart Table -->
+    <div class="overflow-x-auto bg-white shadow rounded-lg border border-gray-200">
+      <table class="min-w-full table-auto text-sm">
+        <thead class="bg-indigo-100 text-indigo-700">
+          <tr>
+            <th class="px-4 py-3 text-left">Item</th>
+            <th class="px-4 py-3">Quantity</th>
+            <th class="px-4 py-3">Added By</th>
+            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+
+          <!-- Example Item -->
+          <tr class="border-t">
+            <td class="px-4 py-4 font-medium flex items-center gap-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Rice" class="w-8 h-8">
+              Basmati Rice 5kg
+            </td>
+            <td class="text-center">1</td>
+            <td class="text-center">You</td>
+            <td class="text-center">
+              <span class="bg-yellow-100 text-yellow-700 text-xs px-3 py-1 rounded-full">Pending</span>
+            </td>
+            <td class="text-center space-x-2">
+              <button class="text-green-600 hover:text-green-800">👍 Approve</button>
+              <button class="text-red-600 hover:text-red-800">🗑️ Remove</button>
+            </td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="px-4 py-4 font-medium flex items-center gap-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/3081/3081485.png" alt="Toilet Paper" class="w-8 h-8">
+              Toilet Paper (12 rolls)
+            </td>
+            <td class="text-center">2</td>
+            <td class="text-center">Sravya</td>
+            <td class="text-center">
+              <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">Approved</span>
+            </td>
+            <td class="text-center space-x-2">
+              <button class="text-green-400 cursor-not-allowed" disabled>👍</button>
+              <button class="text-gray-400 cursor-not-allowed" disabled>🗑️</button>
+            </td>
+          </tr>
+
+          <!-- Add more rows as needed -->
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="mt-8 flex flex-col md:flex-row justify-between items-center bg-indigo-100 p-6 rounded-lg shadow">
+      <div class="mb-4 md:mb-0">
+        <p class="text-lg font-semibold text-indigo-700">Total Items: <span class="text-gray-800">3</span></p>
+        <p class="text-lg font-semibold text-indigo-700">Estimated Total: <span class="text-gray-800">₹980</span></p>
+      </div>
+      <a href="checkout.html" class="bg-indigo-500 text-white px-6 py-3 rounded-md hover:bg-indigo-600 transition shadow">
+        Proceed to Checkout
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-300 text-white py-6 text-center mt-16">
+    <p>© 2025 GroupCart. Smarter shared shopping 💡</p>
+  </footer>
+
+</body>
+</html>
